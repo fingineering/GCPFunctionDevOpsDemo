@@ -1,0 +1,4 @@
+functions-framework
+python-dotenv
+pytest
+pathlib
