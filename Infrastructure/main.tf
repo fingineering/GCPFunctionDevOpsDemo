@@ -84,7 +84,7 @@ resource "google_cloudfunctions_function" "helloWorldDemo" {
     timeout = 300
     trigger_http = true
     source_repository {
-        url = "https://source.developers.google.com/projects/${var.project}/repos/${google_sourcerepo_repository.demo_repo.name}/moveable-aliases/main/paths/"
+        url = "https://source.developers.google.com/projects/${var.project}/repos/${google_sourcerepo_repository.demo_repo.name}/moveable-aliases/main/paths/HelloWorldFunction"
     }
     # service_account_email = google_service_account.hubspot_client.email
 
