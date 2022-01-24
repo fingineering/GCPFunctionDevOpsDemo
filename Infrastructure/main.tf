@@ -16,7 +16,6 @@ terraform {
 # define provider configuration
 variable "project" {
   type = string
-  default = "trusty-dialect-331115"
 }
 variable "location" {
   type = string
@@ -59,7 +58,7 @@ resource "google_sourcerepo_repository_iam_binding" "demoEditors" {
   repository = google_sourcerepo_repository.demo_repo.name
   role = "roles/editor"
   members = [
-      var.CODEEDITORUSER
+      "${var.CODEEDITORUSER}"
   ]
 }
 
@@ -127,7 +126,7 @@ resource "google_project_iam_member" "act_as" {
 
 resource "google_cloudbuild_trigger" "helloTrigger" {
     name = "hellotrigger"
-    filename = "cloudbuild.yaml"
+    filename = "HelloWorldFunction/cloudbuild.yaml"
     service_account = google_service_account.demo_builder.id
     
     trigger_template {
@@ -139,4 +138,6 @@ resource "google_cloudbuild_trigger" "helloTrigger" {
     depends_on = [
       google_project_iam_member.act_as
     ]
+
+
 }
