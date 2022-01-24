@@ -91,7 +91,7 @@ resource "google_cloudfunctions_function" "helloWorldDemo" {
         ENVVAR = "FooBar"
     }
 
-
+  service_account_email = google_service_account.demo_function.email
 }
 
 resource "google_cloudfunctions_function_iam_binding" "demoInvoke" {
