@@ -6,7 +6,7 @@ steps:
   args: [-c, 'pip install -r requirements.txt && pytest']
   dir: '.'
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['functions', 'deploy', 'hello_world', '--trigger-http', '--runtime', 'python39', '--entry-point', 'hello_world', '--region', 'europe-west3', '--source', 'https://source.developers.google.com/projects/<your-project-id>/repos/demoFunction/moveable-aliases/main/paths/HelloWorldFunction']
+  args: ['functions', 'deploy', 'hello_world', '--trigger-http', '--runtime', 'python39', '--entry-point', 'hello_world', '--region', 'europe-west3', '--source', 'https://source.developers.google.com/projects/$PROJECT_ID/repos/demoFunction/moveable-aliases/main/paths/HelloWorldFunction']
   dir: '.'
 options:
   logging: CLOUD_LOGGING_ONLY
