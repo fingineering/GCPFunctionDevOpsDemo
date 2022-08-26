@@ -1,0 +1,3 @@
+project="gcp-project-name"
+location = "europe-west3"
+CODEEDITORUSER="user:your.mail@domain.com"
